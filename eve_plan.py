@@ -7,11 +7,24 @@ import google.generativeai as genai
 import os
 
 # Get the API key from secrets
+#api_key = os.getenv("GEMINI_API_KEY")
+#if api_key:
+ #   genai.configure(api_key=api_key)
+#else:
+  #  st.error("API key not found. Please set the GEMINI_API_KEY environment variable.")
+
+import os
+
+# Access the environment variable named "GEMINI_API_KEY"
 api_key = os.getenv("GEMINI_API_KEY")
+
+# Check if the API key was retrieved successfully
 if api_key:
-    genai.configure(api_key=api_key)
+    print("API key retrieved successfully:", api_key)
 else:
-    st.error("API key not found. Please set the GEMINI_API_KEY environment variable.")
+    print("API key not found")
+
+
 
 # Function to generate suggestions
 def generate_suggestions(event_type, audience_size, budget, location, special_requests):
