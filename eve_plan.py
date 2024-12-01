@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # Configure your Gemini API key
-#genai.configure(api_key="AIzaSyCmMnH1xctvxZ9h6AUeaQJDd0-1tg3VbDg")
+genai.configure(api_key="AIzaSyCmMnH1xctvxZ9h6AUeaQJDd0-1tg3VbDg")
 
 import os
 
@@ -13,16 +13,16 @@ import os
 #else:
   #  st.error("API key not found. Please set the GEMINI_API_KEY environment variable.")
 
-import os
+#import os
 
 # Access the environment variable named "GEMINI_API_KEY"
-api_key = os.getenv("GEMINI_API_KEY")
+#api_key = os.getenv("GEMINI_API_KEY")
 
 # Check if the API key was retrieved successfully
-if api_key:
-    print("API key retrieved successfully:", api_key)
-else:
-    print("API key not found")
+#if api_key:
+  #  print("API key retrieved successfully:", api_key)
+#else:
+ #   print("API key not found")
 
 
 
