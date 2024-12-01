@@ -2,7 +2,16 @@ import streamlit as st
 import google.generativeai as genai
 
 # Configure your Gemini API key
-genai.configure(api_key="AIzaSyCmMnH1xctvxZ9h6AUeaQJDd0-1tg3VbDg")
+#genai.configure(api_key="AIzaSyCmMnH1xctvxZ9h6AUeaQJDd0-1tg3VbDg")
+
+import os
+
+# Get the API key from secrets
+api_key = os.getenv("GEMINI_API_KEY")
+if api_key:
+    genai.configure(api_key=api_key)
+else:
+    st.error("API key not found. Please set the GEMINI_API_KEY environment variable.")
 
 # Function to generate suggestions
 def generate_suggestions(event_type, audience_size, budget, location, special_requests):
